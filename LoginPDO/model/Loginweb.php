@@ -9,7 +9,7 @@ class Login{
 
     public function getLogin($usernameAndEmail,$password) 
     {
-        $sql = "SELECT * FROM loginwww where username = '$usernameAndEmail' || email = '$usernameAndEmail' && password = '$password'";
+        $sql = "SELECT * FROM loginwww where username = '$usernameAndEmail' && password = '$password' || email = '$usernameAndEmail' && password = '$password'" ;
         $check_data = $this->ConDB->prepare($sql);
         $check_data->execute();
         $row = $check_data->fetch(PDO::FETCH_ASSOC);
