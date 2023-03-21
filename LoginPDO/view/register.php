@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>LOGIN</title>
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
   </head>
   <body>
     <section class="h-100 gradient-form" style="background-color: #eee;">
@@ -22,33 +22,32 @@
                     <div class="card-body p-md-5 mx-md-4">
 
                         <div class="text-center">
-                        <img src="assets/img/logoPNG.png"
+                        <img src="../assets/img/logoPNG.png"
                             style="width: 200px;" alt="logo">
                         <h4 class="mt-1 mb-5 pb-1">Login your game</h4>
                         </div>
 
-                        <form  method="get" action="controller/runFunction.php" enctype="multipart/form-data">
-                        <p>Please login to your account</p>
+                        <form  method="POST" action="../controller/register_Controller.php" enctype="multipart/form-data">
+                        <p>Please enter to your account</p>
 
                         <div class="form-outline mb-4">
-                            <input type="text" id="UElogin" name="UElogin" class="form-control"
-                            placeholder="Email or Username" required />
+                            <input type="text" id="EmailID" name="EmailName" class="form-control"
+                            placeholder="Email" required />
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="password" id="Password" name="Password" class="form-control" 
-                            placeholder="Password" required />
+                            <input type="text" id="UsernameID" name="UsernameName" class="form-control"
+                            placeholder="Username" required />
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="PasswordID" name="PasswordName" class="form-control" 
+                            placeholder="Password" required /><br>
                         </div>
 
                         <div class="text-center pt-1 mb-5 pb-1">
-                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
-                            in</button><br>
-                            <a class="text-muted" href="#!">Forgot password?</a>
-                        </div>
-
-                        <div class="d-flex align-items-center justify-content-center pb-4">
-                            <p class="mb-0 me-2">Don't have an account?</p>
-                            <a href="view/register.php"><button type="button" class="btn btn-outline-danger">Create new</button></a>
+                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register
+                            </button>
                         </div>
 
                         </form>
