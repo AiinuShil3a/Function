@@ -122,7 +122,7 @@
                 <h3>Profile</h3>
                 <ul>
                   <li><strong>ชื่อ</strong>: <?= $jsonDecode["name"]; ?> <?= $jsonDecode["lastname"]; ?></li>
-                  <li><strong>เกิดวันที่</strong>: <?= $json_Age[0]; ?></li>
+                  <li><strong>เกิดวันที่</strong>: <?= $newDate ?></li>
                   <li><strong>อายุ</strong>: <?= $json_Age[1]; ?> ปี</li>
                   <li><strong>สถานภาพ</strong>: <?= $calyear; ?></li>
                 </ul>

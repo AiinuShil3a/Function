@@ -117,31 +117,35 @@
       <div class="container">
 
         <div class="row">
-        
+
           <div class="col-lg-4" data-aos="fade-up">
-          <a href="view/view_Add.php">
-            <div class="box">
-              <span>01</span>
-              <h4>Add Card</h4>
-              <p>Functions for adding information to the website Click to add data</p>
-            </div>
+            <a href="view/view_Add.php">
+              <div class="box">
+                <span>01</span>
+                <h4>Add Card</h4>
+                <p>Functions for adding information to the website Click to add data</p>
+              </div>
             </a>
           </div>
-    
+
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="150">
-            <div class="box">
-              <span>02</span>
-              <h4>Edit Card</h4>
-              <p>Functions for editing information to the website Click to edit data</p>
-            </div>
+            <a href="view/view_Edit_select.php">
+              <div class="box">
+                <span>02</span>
+                <h4>Edit Card</h4>
+                <p>Functions for editing information to the website Click to edit data</p>
+              </div>
+            </a>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="box">
-              <span>03</span>
-              <h4>Deleate Card</h4>
-              <p>Functions for deleting data into the website Click to delete data</p>
-            </div>
+            <a href="view/view_Delete.php">
+              <div class="box">
+                <span>03</span>
+                <h4>Deleate Card</h4>
+                <p>Functions for deleting data into the website Click to delete data</p>
+              </div>
+            </a>
           </div>
 
         </div>
@@ -253,6 +257,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

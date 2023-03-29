@@ -13,8 +13,10 @@
         public function connect(){
             try{
                 $this->conn = new PDO("mysql:host=localhost;dbname=students","root","");
+                echo "Pass";
             }catch(PDOException $e){
                 echo $e->getMessage();
+                echo "Fail";
             }
             
         }

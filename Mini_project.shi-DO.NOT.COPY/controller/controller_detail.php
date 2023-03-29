@@ -18,5 +18,8 @@
     $college_Years = $haveYear;
     include 'calcilater_Year.php';
 
+    $DMY = $json_Age[0];
+    $newDate = date("d-m-Y", strtotime($DMY));
+
     include "../view/view_detail.php";
 ?>

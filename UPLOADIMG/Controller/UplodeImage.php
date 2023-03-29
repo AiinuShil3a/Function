@@ -12,12 +12,20 @@ if (isset($_POST['upload'])) {
     $obj_name = new img();
     $rs2 = $obj_name->Image($filename);
 
+    $imageFileType = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    if ( $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"){
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      }
+      else{
+        if (move_uploaded_file($tempname, $folder)) {
+            echo "<h3> Success to upload image!</h3>";
+            include "../View/button.php";
+        } else {
+            echo "<h3> Failed to upload image!</h3>";
+            include "../View/button.php";
+        }
+      }
 
-    if (move_uploaded_file($tempname, $folder)) {
-        echo "<h3> Success to upload image!</h3>";
-        include "../View/button.php";
-    } else {
-        echo "<h3> Failed to upload image!</h3>";
-        include "../View/button.php";
-    }
+
+
 }

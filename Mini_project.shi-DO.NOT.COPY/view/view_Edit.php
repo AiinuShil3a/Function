@@ -47,20 +47,20 @@
                             <div class="card-body p-md-5 mx-md-4">
 
                                 <div class="text-center">
-                                    <h6 class="mt-1 mb-5 pb-1">เพิ่มข้อมูลนักศึกษา</h6>
+                                    <h6 class="mt-1 mb-5 pb-1">แก้ไขข้อมูลนักศึกษา</h6>
                                 </div>
 
-                                <form method="POST" action="../controller/controller_Add.php" enctype="multipart/form-data">
-
+                                <form method="POST" action="../controller/controller_Edit_before.php" enctype="multipart/form-data">
+                                    <input name="id" type="hidden" id="ID" value="<?= $jsonDecode['id']; ?>">
                                     <div class="row mb-4">
                                         <div class="col">
                                             <div class="form-outline">
-                                                <input type="text" id="names" name="names" class="form-control" placeholder="ชื่อ" required />
+                                                <input type="text" id="names" name="names" class="form-control" placeholder="<?= $jsonDecode['name'] ?>" required />
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
-                                                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="นามสกลุล" required />
+                                                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="<?= $jsonDecode['lastname'] ?>" required />
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +79,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
-                                                <input type="text" id="no" name="no" class="form-control" placeholder="รหัสนักศึกษา" required maxlength="9" minlength="9" pattern="[0-9]+" />
+                                                <input type="text" id="no" name="no" class="form-control" placeholder="<?= $jsonDecode['NumberID'] ?>" required maxlength="9" minlength="9" pattern="[0-9]+" />
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <label class="form-label" for="form6Example6">นักศึกษาปี</label>
-                                                <input type="text" id="year" name="year" class="form-control" placeholder="ปีที่เข้ารับการศึกษา" required maxlength="4" minlength="4" pattern="[0-9]+" />
+                                                <input type="text" id="year" name="year" class="form-control" placeholder="<?= $jsonDecode['college_Years'] ?>" required maxlength="4" minlength="4" pattern="[0-9]+" />
                                             </div>
                                         </div>
                                         <div class="col">
@@ -124,22 +124,22 @@
                                     <div class="row mb-4">
                                         <div class="col-3">
                                             <div class="form-outline">
-                                                <input type="text" id="co1" name="co1" class="form-control" required maxlength="4" minlength="4" pattern="[0-9]+" />
+                                                <input type="text" id="co1" name="co1" class="form-control" placeholder="<?= $jsonDecode['cno1'] ?>" required maxlength="4" minlength="4" pattern="[0-9]+" />
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-outline">
-                                                <input type="text" id="co2" name="co2" class="form-control" required maxlength="4" minlength="4" pattern="[0-9]+" />
+                                                <input type="text" id="co2" name="co2" class="form-control" placeholder="<?= $jsonDecode['cno2'] ?>" required maxlength="4" minlength="4" pattern="[0-9]+" />
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-outline">
-                                                <input type="text" id="co3" name="co3" class="form-control" required maxlength="4" minlength="4" pattern="[0-9]+" />
+                                                <input type="text" id="co3" name="co3" class="form-control" placeholder="<?= $jsonDecode['cno3'] ?>" required maxlength="4" minlength="4" pattern="[0-9]+" />
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-outline">
-                                                <input type="text" id="co4" name="co4" class="form-control" required maxlength="4" minlength="4" pattern="[0-9]+" />
+                                                <input type="text" id="co4" name="co4" class="form-control" placeholder="<?= $jsonDecode['cno4'] ?>" required maxlength="4" minlength="4" pattern="[0-9]+" />
                                             </div>
                                         </div>
                                     </div>
