@@ -1,5 +1,5 @@
 <?php
-class Login{
+class MyFunction{
     private $ConDB;
     public function __construct(){
         $con = new ConDB();
@@ -7,22 +7,43 @@ class Login{
         $this->ConDB = $con->conn;
     }
 
-    public function getLogin($usernameAndEmail,$password) 
+    public function getStudentJSON($filename)
     {
-        $sql = "SELECT * FROM loginwww where username = '$usernameAndEmail' && password = '$password' || email = '$usernameAndEmail' && password = '$password'" ;
-        $check_data = $this->ConDB->prepare($sql);
-        $check_data->execute();
-        $row = $check_data->fetch(PDO::FETCH_ASSOC);
-        if ($check_data->rowCount() > 0) {
-            $data = json_encode($row);
+        $dataJSON = file_get_contents($filename);
+        if($dataJSON){
+            $decode = json_decode($dataJSON);
+            return $decode;
+        }else{
+            include false;
+        }
+    }
+    public function getStudent()
+    {
+        $sql = "SELECT * FROM studentsuser";
+        $query = $this->ConDB->prepare($sql);
+        if( $query->execute()){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            $data = json_encode($result);
             return $data;
-        } else {
-            include "alertInput.js";
-        }       
-
+        }else {
+            return false;
+        }
     }
 
-    public function addUser($Email , $User , $PassMD5) // ADD NO ARRAY
+    public function getStudentDetail($id)
+    {
+        $sql = "SELECT * FROM studentsuser where id = ".$id;
+        $query = $this->ConDB->prepare($sql);
+        if( $query->execute()){
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $data = json_encode($result);
+            return $data;
+        }else {
+            return false;
+        }
+    }
+
+ /*    public function addUser($Email , $User , $PassMD5) // ADD NO ARRAY
     {
         $sql = "INSERT INTO `loginwww` (`id`, `email`, `username`, `password`)
                 VALUES ('', '$Email' ,'$User', '$PassMD5')";
@@ -33,7 +54,7 @@ class Login{
             include "alertInput.js";
         }
     }
-/* 
+
     public function addUserArray($data_register) // ADD BY ARRAY 1
     {
         $sql = "INSERT INTO `loginwww` (`id`, `email`, `username`, `password`)";
@@ -68,7 +89,7 @@ class Login{
         }else {
             include "alertInput.js";
         }
-    } */
+    }
 
     public function editUser($id , $Email , $User , $PassMD5) // ADD NO ARRAY
     {
@@ -80,7 +101,7 @@ class Login{
         }else {
             return false;
         }
-    }
+    } */
 
 
 }

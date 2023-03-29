@@ -7,12 +7,12 @@
     $Pass = $_POST['PasswordName'];
     $PassMD5 = md5($Pass);
 
-    $register = array();
+/*     $register = array();
     $register["EMAIL"]=$Email;
     $register["USERNAME"]=$User;
-    $register["PASSWORD"]=$PassMD5;
+    $register["PASSWORD"]=$PassMD5; */
 
     $obj_name=new Login();
-    $rs2= $obj_name->addUserArray($register);
+    $rs2= $obj_name->addUser($Email , $User , $PassMD5);
     
 ?>
